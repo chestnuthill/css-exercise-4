@@ -1,30 +1,90 @@
 body {
   background-color: #dadada;
-  font-size: 10px;
+  font-size: 16px;
+  font-family: sans-serif;
 }
 
 .container {
-  margin: 20px auto;
-  width: 90%;
-}
-
-div {
-  background-color: #dadada;
-  float: left;
-  margin: 1% 0;
+  margin: 0 auto;
   width: 100%;
-  padding: 20px 25px;
+  display: grid;
+  grid-template-areas:
+  'header'
+  'image1'
+  'image2'
+  'image3'
+  'image4';
+  grid-gap: 10px;
 }
 
-/* code added to create two-column design */
-@media screen and (min-width: 575px){
-   div {
-    margin: 1%;
-    width: 50%;
+.container h1 {
+  padding: 30px;
+  text-align: center;
+  grid-area: header;
+}
+
+.preview {
+  background-size: cover;
+  height: 300px;
+}
+
+.preview h1 {
+  text-align: left;
+  padding: 15px;
+}
+
+.baku {
+  background-image: url("../images/baku.jpg");
+  grid-area: image1;
+}
+
+.london {
+  background-image: url("../images/london.png");
+  grid-area: image2;
+}
+
+.madrid {
+  background-image: url("../images/madrid.jpg");
+  grid-area: image3;
+}
+
+.rome {
+  background-image: url("../images/rome.jpg");
+  grid-area: image4;
+}
+
+@media screen and (min-width: 481px) {
+  .container {
+    width: 90%;
+    display: grid;
+    grid-template-areas:
+    'header header'
+    'image1 image2'
+    'image3 image4';
+    grid-gap: 10px;
+  }
+
+  .preview{
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: 80%;
+    display: grid;
+    grid-template-areas:
+    'header header header header'
+    'image1 image2 image3 image4';
+    grid-gap: 10px;
+  }
+
+  .preview{
+    height: 150px;
   }
 
   img {
-    width: 80%;
-    margin: 0 auto;
+    max-width: 25%
   }
+
 }
